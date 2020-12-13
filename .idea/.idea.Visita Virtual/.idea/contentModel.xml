@@ -41,15 +41,15 @@
             </e>
           </e>
         </e>
+        <e p="GameManager.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Description.cs" t="Include" />
-          <e p="GizmoSphere.cs" t="Include" />
+          <e p="IInteractable.cs" t="Include" />
           <e p="Interactable.cs" t="Include" />
-          <e p="Interfaces" t="Include">
-            <e p="IInteractable.cs" t="Include" />
-          </e>
+          <e p="locationMarker.cs" t="Include" />
           <e p="MouseLook.cs" t="Include" />
           <e p="Mover.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="PointOfInterest.cs" t="Include" />
           <e p="RaycastSelector.cs" t="Include" />
           <e p="SceneManagement" t="Include">

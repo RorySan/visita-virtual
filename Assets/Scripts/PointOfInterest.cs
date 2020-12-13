@@ -1,34 +1,60 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class PointOfInterest : MonoBehaviour, IInteractable
 {
     // config
+    [SerializeField] private float interactionTime = 1.5f;
     [SerializeField] private Outline targetOutline;
-    [SerializeField] private Transform targetPosition;
-
-    // cached items
-    private Collider myCollider = null;
+    [SerializeField] protected LocationMarker targetPosition;
+    [SerializeField] private UnityEvent onInteraction;
     
+
+    private bool isInteracting;
+
+    private Coroutine interactionCoroutine = null;
 
     private void Start()
     {
-        myCollider = GetComponent<Collider>();
-        
         targetOutline.enabled = false;
     }
 
-    public void Interact(RaycastSelector instigator)
+    public virtual void Interact()
     {
-        instigator.GetComponent<Mover>().MoveToPosition(targetPosition);
+        if (targetPosition.HasPlayer) return;
+        interactionCoroutine = StartCoroutine(InitiateInteraction());
     }
 
-    public void Highlight()
+    public void CancelInteraction()
+    {
+        if (!isInteracting) return;
+        StopCoroutine(interactionCoroutine);
+        CancelHighlight();
+        isInteracting = false;
+        Debug.Log("Interaction Cancelled");
+    }
+
+
+    private IEnumerator InitiateInteraction()
+    {
+        Highlight();
+        isInteracting = true;
+        Debug.Log("Waiting for interaction time...");
+        yield return new WaitForSeconds(interactionTime);
+        //interactable.Interact(this);
+        onInteraction.Invoke();
+        Debug.Log("Interaction Executed");
+    }
+    
+    private void Highlight()
     {
         targetOutline.enabled = true;
     }
 
-    public void CancelHighlight()
+    private void CancelHighlight()
     {
         targetOutline.enabled = false;
     }
+
 }

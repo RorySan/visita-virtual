@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 public class Description : MonoBehaviour, IInteractable
 {
@@ -26,8 +26,8 @@ public class Description : MonoBehaviour, IInteractable
 
     }
 
-    public void Interact(RaycastSelector instigator)
+    public void InitiateInteraction(RaycastSelector instigator)
     {
 
     }
-}
+}*/

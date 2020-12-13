@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float cameraHeight;
+    [SerializeField] private UnityEvent onMovement;
+    
 
     public void MoveToPosition(Transform target)
     {
@@ -10,6 +13,7 @@ public class Mover : MonoBehaviour
         var newPosition = new Vector3(targetPosition.x, cameraHeight, targetPosition.z);
 
         transform.position = newPosition;
+        onMovement.Invoke();
     }
 
 

@@ -1,12 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-public class GizmoSphere : MonoBehaviour
+public class LocationMarker : MonoBehaviour
 {
     [SerializeField] private string locationName;
     [SerializeField] private string locationDescription;
-    [SerializeField] private PointOfInterest pointOfInterest;
-    
+   
+    public bool HasPlayer { get; set; }
+   
     public string GetLocationName()
     {
         return locationName;
@@ -14,12 +15,12 @@ public class GizmoSphere : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pointOfInterest.HasPlayer = true;
+        HasPlayer = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        pointOfInterest.HasPlayer = false;
+        HasPlayer = false;
     }
 
     private void OnDrawGizmosSelected()

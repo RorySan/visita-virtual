@@ -1,7 +1,6 @@
 ﻿
 public interface IInteractable
 {
-    void Interact(RaycastSelector instigator);
-    void Highlight();
-    void CancelHighlight();
+    void Interact();
+    void CancelInteraction();
 }
