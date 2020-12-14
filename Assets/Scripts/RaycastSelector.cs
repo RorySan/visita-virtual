@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RaycastSelector : MonoBehaviour
 {
@@ -9,8 +8,8 @@ public class RaycastSelector : MonoBehaviour
     
     
     
-    private GameObject currentTarget = null;
-    private IInteractable interactableObject = null;
+    private GameObject currentTarget;
+    private IInteractable interactableObject;
 
     private void Update()
     {

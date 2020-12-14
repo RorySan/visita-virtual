@@ -11,20 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02debb24-bdf3-43af-9656-11f83cb4c19e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LocationText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LocationText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Points of Interest/POI Interaction.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Points of Interest/POI Interaction.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Points of Interest/Point Of Interest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Points of Interest/Point Of Interest.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointOfInterest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointOfInterest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RaycastSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaycastSelector.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,30 +28,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TVSwitch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LocationText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TVSwitch.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInteractable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Description.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/IInteractable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RaycastSelector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Mover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GizmoSphere.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/locationMarker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LocationMarker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PointOfInterest.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/LocationText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TVSwitch.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/RaycastSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/LocationText.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PointOfInterest.cs" />
+      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1lbGyxmFfRxCfx6wRD8JdSOYVb6" />
   <component name="ProjectViewState">
@@ -102,6 +83,7 @@
       <workItem from="1607858642968" duration="837000" />
       <workItem from="1607859529614" duration="15268000" />
       <workItem from="1607940821692" duration="3594000" />
+      <workItem from="1607945635869" duration="5404000" />
     </task>
     <servers />
   </component>

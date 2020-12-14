@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,24 +8,34 @@ public class PointOfInterest : MonoBehaviour, IInteractable
     // config
     [SerializeField] private float interactionTime = 1.5f;
     [SerializeField] private Outline targetOutline;
-    [SerializeField] protected LocationMarker targetPosition;
+    [SerializeField] private LocationMarker locationMarker;
     [SerializeField] private bool playerRequiredAtLocation;
     
-    [SerializeField] private UnityEvent onInteraction;
-    
-    private bool isInteracting;
+    //[SerializeField] public UnityEvent onInteraction;
+    public OnInteraction onInteraction;
 
-    private Coroutine interactionCoroutine = null;
+    [System.Serializable]
+    public class OnInteraction : UnityEvent<PointOfInterest>
+    {
+    }
+
+    private bool isInteracting;
+    private Coroutine interactionCoroutine;
 
     private void Start()
     {
         CancelHighlight();
     }
 
-    public virtual void Interact()
+    public void Interact()
     {
-        if (targetPosition.HasPlayer != playerRequiredAtLocation) return;
+        if (locationMarker.HasPlayer != playerRequiredAtLocation) return;
         interactionCoroutine = StartCoroutine(InitiateInteraction());
+    }
+
+    public LocationMarker GetLocationMarker()
+    {
+        return locationMarker;
     }
 
     public void CancelInteraction()
@@ -35,12 +46,12 @@ public class PointOfInterest : MonoBehaviour, IInteractable
         isInteracting = false;
         Debug.Log("Interaction Cancelled");
     }
-    protected virtual void Highlight()
+    protected void Highlight()
     {
         targetOutline.enabled = true;
     }
 
-    protected virtual void CancelHighlight()
+    private void CancelHighlight()
     {
         targetOutline.enabled = false;
     }
@@ -51,8 +62,9 @@ public class PointOfInterest : MonoBehaviour, IInteractable
         isInteracting = true;
         Debug.Log("Waiting for interaction time...");
         yield return new WaitForSeconds(interactionTime);
-        //interactable.Interact(this);
-        onInteraction.Invoke();
+        onInteraction.Invoke(this);
         Debug.Log("Interaction Executed");
     }
+    
+    
 }
