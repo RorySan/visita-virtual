@@ -14,20 +14,20 @@ public class PointOfInterest : MonoBehaviour, IInteractable
     //[SerializeField] public UnityEvent onInteraction;
     public OnInteraction onInteraction;
 
+    private bool isInteracting;
+    protected Coroutine interactionCoroutine;
+    
     [System.Serializable]
     public class OnInteraction : UnityEvent<PointOfInterest>
     {
     }
-
-    private bool isInteracting;
-    private Coroutine interactionCoroutine;
 
     private void Start()
     {
         CancelHighlight();
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
         if (locationMarker.HasPlayer != playerRequiredAtLocation) return;
         interactionCoroutine = StartCoroutine(InitiateInteraction());
@@ -46,17 +46,17 @@ public class PointOfInterest : MonoBehaviour, IInteractable
         isInteracting = false;
         Debug.Log("Interaction Cancelled");
     }
-    protected void Highlight()
+    protected virtual void Highlight()
     {
         targetOutline.enabled = true;
     }
 
-    private void CancelHighlight()
+    protected virtual void CancelHighlight()
     {
         targetOutline.enabled = false;
     }
 
-    private IEnumerator InitiateInteraction()
+    protected IEnumerator InitiateInteraction()
     {
         Highlight();
         isInteracting = true;
@@ -65,6 +65,4 @@ public class PointOfInterest : MonoBehaviour, IInteractable
         onInteraction.Invoke(this);
         Debug.Log("Interaction Executed");
     }
-    
-    
 }
