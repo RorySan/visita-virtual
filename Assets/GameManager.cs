@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Mover playerMover;
     private List<PointOfInterest> areas = new List<PointOfInterest>();
+    
 
     private void Start()
     {
