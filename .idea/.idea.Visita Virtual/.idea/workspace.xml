@@ -14,7 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02debb24-bdf3-43af-9656-11f83cb4c19e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Material/Clock.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Material/Clock.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +34,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -51,8 +59,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lbGyxmFfRxCfx6wRD8JdSOYVb6" />
@@ -100,6 +108,8 @@
       <workItem from="1607945635869" duration="16274000" />
       <workItem from="1608044619055" duration="1848000" />
       <workItem from="1608048528478" duration="906000" />
+      <workItem from="1608051293814" duration="283000" />
+      <workItem from="1608051596468" duration="1009000" />
     </task>
     <servers />
   </component>
