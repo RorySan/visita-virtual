@@ -16,6 +16,7 @@ namespace VisitaVirtual.Interaction
       
         public OnInteraction onInteraction;
         private bool isInteracting;
+        private bool hasPlayer;
         protected Coroutine interactionCoroutine;
         
         [System.Serializable]

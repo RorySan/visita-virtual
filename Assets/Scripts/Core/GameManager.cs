@@ -1,10 +1,8 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VisitaVirtual.SceneManagement;
-using VisitaVirtual.Movement;
 using VisitaVirtual.UI;
 using VisitaVirtual.Interaction;
 
@@ -17,7 +15,6 @@ namespace VisitaVirtual.Core
 
 
         // Cached References
-        [SerializeField] private Mover playerMover;
         [SerializeField] private LocationText locationText;
         private SceneLoader sceneLoader;
 
@@ -27,6 +24,8 @@ namespace VisitaVirtual.Core
 
         private void Start()
         {
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+            
             sceneLoader = FindObjectOfType<SceneLoader>();
             areas = FindObjectsOfType<PointOfInterest>().ToList();
             areas.ForEach(x => x.onInteraction.AddListener(InteractionDone));
@@ -50,6 +49,7 @@ namespace VisitaVirtual.Core
             Debug.Log("VARestart");
             //sceneLoader.LoadStartScene();
         }
+        
 
     }
 }

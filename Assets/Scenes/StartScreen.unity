@@ -345,6 +345,14 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4306399129468677262, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306399129468677263, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4306399130461211173, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
       propertyPath: m_RootOrder
       value: 0
