@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace VisitaVirtual.Interaction
 {
-    public class VRButton : PointOfInterest
+    public class VRButton : Interaction
     {
         private Image buttonImage;
 
@@ -12,7 +12,7 @@ namespace VisitaVirtual.Interaction
             buttonImage = GetComponent<Image>();
         }
 
-        protected override void Highlight()
+        protected override void EnableHighlight()
         {
             buttonImage.color = Color.green;
         }
@@ -22,7 +22,7 @@ namespace VisitaVirtual.Interaction
             interactionCoroutine = StartCoroutine(InitiateInteraction());
         }
 
-        protected override void CancelHighlight()
+        protected override void DisableHighlight()
         {
             buttonImage.color = Color.cyan;
         }

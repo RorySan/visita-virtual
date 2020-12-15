@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52858528a99604c4fb5826ed53126465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 30
+  timeRemaining: 120
   isTimerRunning: 1
   startingPosition: {fileID: 868217630}
   userInterface: {fileID: 1037188668}
@@ -3938,6 +3938,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 6.0048676
       objectReference: {fileID: 0}
+    - target: {fileID: 1610642977, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
+      propertyPath: m_Name
+      value: Arcade Interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 1610642979, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: targetOutline
       value: 
@@ -4045,6 +4049,10 @@ PrefabInstance:
     - target: {fileID: 6345057767379686060, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_Center.z
       value: -0.80950165
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377924737141898246, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
+      propertyPath: m_Name
+      value: Arcade Location Marker
       objectReference: {fileID: 0}
     - target: {fileID: 9206407580503204798, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: locationName
@@ -10989,7 +10997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1610642977, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_Name
-      value: POI Interaction
+      value: Main Bar Interaction
       objectReference: {fileID: 0}
     - target: {fileID: 1610642978, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11161,7 +11169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377924737141898246, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_Name
-      value: POI Location
+      value: Main Bar Location Marker
       objectReference: {fileID: 0}
     - target: {fileID: 9206407580503204798, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: locationName
@@ -11917,6 +11925,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -2.6810694
       objectReference: {fileID: 0}
+    - target: {fileID: 1610642977, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
+      propertyPath: m_Name
+      value: Cactus Corner Interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 1610642978, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12036,6 +12048,10 @@ PrefabInstance:
     - target: {fileID: 6345057767379686060, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_Center.z
       value: -6.756298
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377924737141898246, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
+      propertyPath: m_Name
+      value: Cactus Corner Position Marker
       objectReference: {fileID: 0}
     - target: {fileID: 9206407580503204798, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: locationName
@@ -15440,6 +15456,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 2.0734425
       objectReference: {fileID: 0}
+    - target: {fileID: 1610642977, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
+      propertyPath: m_Name
+      value: Entrance Interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 1610642978, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15559,6 +15579,10 @@ PrefabInstance:
     - target: {fileID: 6345057767379686060, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: m_Center.z
       value: -6.238434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377924737141898246, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
+      propertyPath: m_Name
+      value: Entrance Location Marker
       objectReference: {fileID: 0}
     - target: {fileID: 9206407580503204798, guid: 9025896f0f0af494786a551a11b8defe, type: 3}
       propertyPath: locationName
@@ -16847,11 +16871,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2770219502376722624, guid: 43990ef561e182740859453e539c5d44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770219502376722624, guid: 43990ef561e182740859453e539c5d44, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -118
       objectReference: {fileID: 0}
     - target: {fileID: 2770219502376722624, guid: 43990ef561e182740859453e539c5d44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197.1
+      value: -149
       objectReference: {fileID: 0}
     - target: {fileID: 2770219502376722625, guid: 43990ef561e182740859453e539c5d44, type: 3}
       propertyPath: m_text

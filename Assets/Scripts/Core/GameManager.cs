@@ -10,9 +10,9 @@ namespace VisitaVirtual.Core
     public class GameManager : MonoBehaviour
     {
         // Configuration Options
-        [SerializeField] private float timeRemaining = 30;
+        [SerializeField] private float timeRemaining = 120;
         [SerializeField] private bool isTimerRunning = true;
-        [SerializeField] private PointOfInterest startingPosition;
+        [SerializeField] private Interaction.Interaction startingPosition;
 
         // Cached References
         [SerializeField] private UserInterface userInterface;
@@ -20,15 +20,14 @@ namespace VisitaVirtual.Core
         private SceneLoader sceneLoader;
         
         // Support Variables
-        private List<PointOfInterest> interactions = new List<PointOfInterest>();
-        private List<PointOfInterest> completedInteractions = new List<PointOfInterest>();
+        private List<Interaction.Interaction> interactions = new List<Interaction.Interaction>();
+        private List<Interaction.Interaction> completedInteractions = new List<Interaction.Interaction>();
       
-
         private void Start()
         {
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             sceneLoader = FindObjectOfType<SceneLoader>();
-            interactions = FindObjectsOfType<PointOfInterest>().ToList();
+            interactions = FindObjectsOfType<Interaction.Interaction>().ToList();
             interactions.ForEach(x => x.onInteraction.AddListener(InteractionDone));
             startingPosition.onInteraction.Invoke(startingPosition);
             UpdateInteractionsPanel();
@@ -39,7 +38,7 @@ namespace VisitaVirtual.Core
             CountdownTimer();
         }
         
-        private void InteractionDone(PointOfInterest interaction)
+        private void InteractionDone(Interaction.Interaction interaction)
         {
             var location = interaction.GetLocationMarker().GetLocationName();
             userInterface.UpdateLocation(location);

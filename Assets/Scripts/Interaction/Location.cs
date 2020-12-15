@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace VisitaVirtual.Interaction
 {
-    public class Location : PointOfInterest
+    public class Location : Interaction
     {
         [SerializeField] private LocationMarker locationMarker;
         

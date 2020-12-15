@@ -1,16 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using VisitaVirtual.Interaction;
+
 
 namespace VisitaVirtual.Core
 {
     public class RaycastSelector : MonoBehaviour
     {
         // TODO Cachear todos los interactuables de la escena en una lista al empezar
+        //private List<IInteractable> interactables;
+       
         // Config
         [SerializeField] private float maxRayDistance = 150;
 
         private GameObject currentTarget;
         private IInteractable interactableObject;
+
+       
 
         private void FixedUpdate()
         {
