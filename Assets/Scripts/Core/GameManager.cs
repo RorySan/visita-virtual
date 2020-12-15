@@ -6,7 +6,7 @@ using UnityEngine;
 using VisitaVirtual.SceneManagement;
 using VisitaVirtual.UI;
 using VisitaVirtual.Interaction;
-using TMPro;
+
 
 namespace VisitaVirtual.Core
 {
@@ -14,70 +14,72 @@ namespace VisitaVirtual.Core
     {
         // Configuration Options
         [SerializeField] private float timeUntilRestart = 30;
-        [SerializeField] private TextMeshProUGUI timer;
         [SerializeField] private bool isTimerRunning = true;
-        
-
 
         // Cached References
-        [SerializeField] private LocationText locationText;
+        //[SerializeField] private List<TextMeshProUGUI> timerTexts;
+        [SerializeField] private List<InformationPanel> informationPanels;
+        [SerializeField] private UserInterface userInterface;
         private SceneLoader sceneLoader;
-
 
         private List<PointOfInterest> areas = new List<PointOfInterest>();
         private List<PointOfInterest> visitedAreas = new List<PointOfInterest>();
+        private int interactionsRemaining;
         
         
         private void Start()
         {
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
-            
-            
             sceneLoader = FindObjectOfType<SceneLoader>();
             areas = FindObjectsOfType<PointOfInterest>().ToList();
             areas.ForEach(x => x.onInteraction.AddListener(InteractionDone));
-            //StartCoroutine(RestartAfterTime(timeUntilRestart));
+            interactionsRemaining = areas.Count;
+            UpdateInteractionsPanel();
+        }
+
+        private void UpdateInteractionsPanel()
+        {
+            var text = interactionsRemaining.ToString();
+            informationPanels.ForEach(x =>
+                x.UpdateInteractionsRemainingText(text));
         }
 
         private void Update()
         {
+            RunTimer();
+        }
+
+        private void RunTimer()
+        {
             if (!isTimerRunning) return;
-            
+
             if (timeUntilRestart > 0)
             {
                 timeUntilRestart -= Time.deltaTime;
-                float minutes = Mathf.FloorToInt(timeUntilRestart / 60);  
-                float seconds = Mathf.FloorToInt(timeUntilRestart % 60);
-                timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+                var minutes = Mathf.FloorToInt(timeUntilRestart / 60);
+                var seconds = Mathf.FloorToInt(timeUntilRestart % 60);
+                informationPanels.ForEach(x =>
+                    x.UpdateCountdownText($"{minutes:00}:{seconds:00}"));
             }
             else
             {
-                Debug.Log("TAS MUERTO");
-                timer.text = string.Format("{0:00}:{1:00}", 0, 0);
+                //sceneLoader.LoadStartScene();
+                informationPanels.ForEach(x =>
+                    x.UpdateCountdownText($"{0:00}:{0:00}"));
                 isTimerRunning = false;
             }
         }
 
-
         private void InteractionDone(PointOfInterest point)
         {
+            userInterface.UpdateLocation(point.GetLocationMarker().GetLocationName());
+            
+            if (visitedAreas.Contains(point)) return;
             visitedAreas.Add(point);
-            if (visitedAreas.Count == areas.Count) Debug.Log("has visitado todo");
-
-            Debug.Log("areas totales: " + areas.Count);
-            Debug.Log("areas visitadas: " + visitedAreas.Count);
-
-            locationText.UpdateText(point.GetLocationMarker().GetLocationName());
+            interactionsRemaining -= 1;
+            var text = interactionsRemaining.ToString();
+            UpdateInteractionsPanel();
+            
         }
-
-
-        //private static IEnumerator RestartAfterTime(float time)
-        //{
-        //    yield return new WaitForSeconds(time);
-        //    Debug.Log("VARestart");
-            //sceneLoader.LoadStartScene();
-       // }
-        
-
     }
 }

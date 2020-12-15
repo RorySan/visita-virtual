@@ -46,7 +46,6 @@ namespace VisitaVirtual.Interaction
             StopCoroutine(interactionCoroutine);
             CancelHighlight();
             isInteracting = false;
-            Debug.Log("Interaction Cancelled");
         }
         protected virtual void Highlight()
         {
@@ -62,11 +61,10 @@ namespace VisitaVirtual.Interaction
         {
             Highlight();
             isInteracting = true;
-            Debug.Log("Waiting for interaction time...");
             yield return new WaitForSeconds(interactionTime);
+            
             onInteraction.Invoke(this);
             CancelHighlight();
-            Debug.Log("Interaction Executed");
         }
     }
 }

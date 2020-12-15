@@ -14,14 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02debb24-bdf3-43af-9656-11f83cb4c19e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Clock.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material/Clock.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/The Led Display St.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Clock.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Clock.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Timer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Timer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +36,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
@@ -47,7 +51,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PointOfInterest.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/VRButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Movement/LocationMarker.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/TVSwitch.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/TVSwitch.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/LocationMarker.cs" />
@@ -58,9 +61,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lbGyxmFfRxCfx6wRD8JdSOYVb6" />
@@ -109,7 +115,7 @@
       <workItem from="1608044619055" duration="1848000" />
       <workItem from="1608048528478" duration="906000" />
       <workItem from="1608051293814" duration="283000" />
-      <workItem from="1608051596468" duration="1009000" />
+      <workItem from="1608051596468" duration="5666000" />
     </task>
     <servers />
   </component>
