@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using TMPro;
 
-public class InformationPanel : MonoBehaviour
+namespace VisitaVirtual.UI
 {
-    [SerializeField] private TextMeshProUGUI countdownText;
-    [SerializeField] private TextMeshProUGUI interactionsRemainingText;
-
-    public void UpdateCountdownText(string text)
+    public class InformationPanel : MonoBehaviour
     {
-        countdownText.text = text;
-    }
+        [SerializeField] private TextMeshProUGUI countdownText;
+        [SerializeField] private TextMeshProUGUI interactionsRemainingText;
 
-    public void UpdateInteractionsRemainingText(string text)
-    {
-        interactionsRemainingText.text = text;
+        public void UpdateCountdownText(string text)
+        {
+            countdownText.text = text;
+        }
+
+        public void UpdateInteractionsRemainingPanel(string text)
+        {
+            interactionsRemainingText.text = text;
+        }
     }
 }
