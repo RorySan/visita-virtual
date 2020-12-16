@@ -10,27 +10,33 @@ namespace VisitaVirtual.Core
     public class GameManager : MonoBehaviour
     {
         // Configuration Options
+            // Countdown time until the scenario restarts.
         [SerializeField] private float timeRemaining = 120;
+            // ON/OFF switch for the timer in the inspector
         [SerializeField] private bool isTimerRunning = true;
-        [SerializeField] private Interaction.Interaction startingPosition;
+            // Determines the location at which the player starts
+        [SerializeField] private Interactable startingPosition;
 
         // Cached References
+            // Controls the permanent UI 
         [SerializeField] private UserInterface userInterface;
+            // Controls information panels at the scene
         [SerializeField] private List<InformationPanel> informationPanels;
-        private SceneLoader sceneLoader;
+            // Controls scene management
+        [SerializeField] private SceneLoader sceneLoader;
         
         // Support Variables
-        private List<Interaction.Interaction> interactions = new List<Interaction.Interaction>();
-        private List<Interaction.Interaction> completedInteractions = new List<Interaction.Interaction>();
+            // List of all interactions in the scene
+        private List<Interactable> interactions = new List<Interactable>();
+            // List of interactions discovered by the player
+        private readonly List<Interactable> completedInteractions = new List<Interactable>();
       
         private void Start()
         {
-            Screen.sleepTimeout = SleepTimeout.NeverSleep;
-            sceneLoader = FindObjectOfType<SceneLoader>();
-            interactions = FindObjectsOfType<Interaction.Interaction>().ToList();
-            interactions.ForEach(x => x.onInteraction.AddListener(InteractionDone));
-            startingPosition.onInteraction.Invoke(startingPosition);
-            UpdateInteractionsPanel();
+            DisableScreenSleep();
+            CacheReferences();
+            MovePlayerToStartingPosition();
+            UpdateInformationPanels();
         }
 
         private void Update()
@@ -38,21 +44,32 @@ namespace VisitaVirtual.Core
             CountdownTimer();
         }
         
-        private void InteractionDone(Interaction.Interaction interaction)
+        private void CacheReferences()
         {
-            var location = interaction.GetLocationMarker().GetLocationName();
-            userInterface.UpdateLocation(location);
-            
-            if (completedInteractions.Contains(interaction)) return;
-            completedInteractions.Add(interaction);
-            UpdateInteractionsPanel();
+            //Find and listen to all interactions available
+            interactions = FindObjectsOfType<Interactable>().ToList();
+            interactions.ForEach(x => x.onInteraction.AddListener(InteractionExecuted));
         }
         
-        private void UpdateInteractionsPanel()
+        private void InteractionExecuted(Interactable interactable)
         {
-            var remaining = interactions.Count - completedInteractions.Count;
+            userInterface.UpdateLocation(interactable.GetLocationName());
+            CountNewInteraction(interactable);
+            UpdateInformationPanels();
+        }
+
+        private void CountNewInteraction(Interactable interactable)
+        {
+            if (completedInteractions.Contains(interactable)) return;
+            completedInteractions.Add(interactable);
+        }
+
+        private void UpdateInformationPanels()
+        {
+            var interactionsRemaining = interactions.Count - completedInteractions.Count;
+        
             informationPanels.ForEach(x =>
-                x.UpdateInteractionsRemainingPanel(remaining.ToString()));
+                x.UpdateInteractionsRemainingText(interactionsRemaining));
         }
         
         private void CountdownTimer()
@@ -70,18 +87,29 @@ namespace VisitaVirtual.Core
             var seconds = Mathf.FloorToInt(timeRemaining % 60);
             UpdateTimerPanel(minutes, seconds);
         }
+
+        private void UpdateTimerPanel(int minutes, int seconds)
+        {
+            var timeLeft = $"{minutes:00}:{seconds:00}";
+            informationPanels.ForEach(x => 
+                x.UpdateCountdownText(timeLeft));
+        }
         
         private void FinishCountdown()
         {
             UpdateTimerPanel(0, 0);
             isTimerRunning = false;
-            //sceneLoader.LoadStartScene();
+            sceneLoader.LoadStartScene();
+        }
+        
+        private void MovePlayerToStartingPosition()
+        {
+            startingPosition.onInteraction.Invoke(startingPosition);
         }
 
-        private void UpdateTimerPanel(int minutes, int seconds)
+        private static void DisableScreenSleep()
         {
-            var timeLeft = $"{minutes:00}:{seconds:00}";
-            informationPanels.ForEach(x => x.UpdateCountdownText(timeLeft));
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
         }
     }
 }

@@ -19,11 +19,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/IInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/IInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,14 +63,18 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/IInteractable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/IInteractable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Control/RaycastSelector.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lbGyxmFfRxCfx6wRD8JdSOYVb6" />
@@ -116,6 +124,9 @@
       <workItem from="1608048528478" duration="906000" />
       <workItem from="1608051293814" duration="283000" />
       <workItem from="1608051596468" duration="11257000" />
+      <workItem from="1608131200601" duration="560000" />
+      <workItem from="1608131786324" duration="5490000" />
+      <workItem from="1608143279209" duration="6814000" />
     </task>
     <servers />
   </component>

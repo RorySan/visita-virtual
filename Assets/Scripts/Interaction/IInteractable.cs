@@ -3,7 +3,9 @@ namespace VisitaVirtual.Interaction
 {
     public interface IInteractable
     {
+        bool IsInRange();
         void Interact();
-        void CancelInteraction();
+        void EnableHighlight();
+        void DisableHighlight();
     }
 }

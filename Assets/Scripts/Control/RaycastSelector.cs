@@ -1,37 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using VisitaVirtual.Interaction;
 
 
-namespace VisitaVirtual.Core
+namespace VisitaVirtual.Control
 {
     public class RaycastSelector : MonoBehaviour
     {
         // TODO Cachear todos los interactuables de la escena en una lista al empezar
         //private List<IInteractable> interactables;
        
-        // Config
+        // Config Options
+        [SerializeField] private float interactionTime = 1.5f;
         [SerializeField] private float maxRayDistance = 150;
 
         private GameObject currentTarget;
         private IInteractable interactableObject;
-
-       
-
+        private bool isInteracting;
+        private Coroutine InteractionCoroutine;
+        
         private void FixedUpdate()
         {
             RaycastHit hit = FireRay();
-            if (!FindTarget(hit)) return;
+            if (!FindsTarget(hit)) return;
             if (TargetNotChanged(hit, out var newTarget)) return;
 
             InteractWithNewTarget(newTarget);
         }
 
-        private bool FindTarget(RaycastHit hit)
+        private bool FindsTarget(RaycastHit hit)
         {
             if (hit.transform) return true;
-            interactableObject?.CancelInteraction();
+            CancelInteraction();
             currentTarget = null;
             return false;
         }
@@ -44,11 +44,31 @@ namespace VisitaVirtual.Core
 
         private void InteractWithNewTarget(GameObject newTarget)
         {
-            interactableObject?.CancelInteraction();
+            CancelInteraction();
             currentTarget = newTarget;
             Debug.Log($"Current Target: {currentTarget.name}");
             interactableObject = currentTarget.GetComponent<IInteractable>();
-            interactableObject?.Interact();
+            if (interactableObject == null || !interactableObject.IsInRange()) return;
+            
+            InteractionCoroutine = StartCoroutine(InitiateInteraction());
+        }
+        
+        private IEnumerator InitiateInteraction()
+        {
+            interactableObject.EnableHighlight();
+            isInteracting = true;
+            yield return new WaitForSeconds(interactionTime);
+            Debug.Log("execute");
+            interactableObject.Interact();
+            CancelInteraction();
+        }
+        
+        private void CancelInteraction()
+        {
+            if (!isInteracting) return;
+            StopCoroutine(InteractionCoroutine);
+            interactableObject.DisableHighlight();
+            isInteracting = false;
         }
 
         private RaycastHit FireRay()

@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace VisitaVirtual.UI
 {
@@ -14,8 +15,12 @@ namespace VisitaVirtual.UI
             countdownText.text = text;
         }
 
-        public void UpdateInteractionsRemainingPanel(string text)
+        public void UpdateInteractionsRemainingText(int interactionsRemaining)
         {
+            string text;
+            if (interactionsRemaining == 0) text = "Done";
+            else text = interactionsRemaining.ToString();
+            
             interactionsRemainingText.text = text;
         }
     }
