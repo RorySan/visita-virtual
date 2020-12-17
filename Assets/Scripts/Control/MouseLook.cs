@@ -9,12 +9,10 @@ namespace VisitaVirtual.Control
 
         private void Update()
         {
-            if (Input.GetMouseButton(0))
-            {
-                rotation.y += Input.GetAxis("Mouse X");
-                rotation.x += Input.GetAxis("Mouse Y");
-                transform.eulerAngles = (Vector2) rotation * speed;
-            }
+            if (!Input.GetMouseButton(0)) return;
+            rotation.y += Input.GetAxis("Mouse X");
+            rotation.x += Input.GetAxis("Mouse Y");
+            transform.eulerAngles = (Vector2) rotation * speed;
         }
     }
 }

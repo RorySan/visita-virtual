@@ -2,7 +2,6 @@
 using UnityEngine;
 using VisitaVirtual.Interaction;
 
-
 namespace VisitaVirtual.Control
 {
     public class RaycastSelector : MonoBehaviour
@@ -14,6 +13,7 @@ namespace VisitaVirtual.Control
         [SerializeField] private float interactionTime = 1.5f;
         [SerializeField] private float maxRayDistance = 150;
 
+        // Support Variables
         private GameObject currentTarget;
         private IInteractable interactableObject;
         private bool isInteracting;
@@ -21,9 +21,9 @@ namespace VisitaVirtual.Control
         
         private void FixedUpdate()
         {
-            RaycastHit hit = FireRay();
-            if (!FindsTarget(hit)) return;
-            if (TargetNotChanged(hit, out var newTarget)) return;
+            var raycastHit = FireRay();
+            if (!FindsTarget(raycastHit)) return;
+            if (TargetNotChanged(raycastHit, out var newTarget)) return;
 
             InteractWithNewTarget(newTarget);
         }
@@ -46,9 +46,8 @@ namespace VisitaVirtual.Control
         {
             CancelInteraction();
             currentTarget = newTarget;
-            Debug.Log($"Current Target: {currentTarget.name}");
             interactableObject = currentTarget.GetComponent<IInteractable>();
-            if (interactableObject == null || !interactableObject.IsInRange()) return;
+            if (interactableObject == null || !interactableObject.IsAvailable()) return;
             
             InteractionCoroutine = StartCoroutine(InitiateInteraction());
         }
@@ -58,7 +57,6 @@ namespace VisitaVirtual.Control
             interactableObject.EnableHighlight();
             isInteracting = true;
             yield return new WaitForSeconds(interactionTime);
-            Debug.Log("execute");
             interactableObject.Interact();
             CancelInteraction();
         }
@@ -73,8 +71,7 @@ namespace VisitaVirtual.Control
 
         private RaycastHit FireRay()
         {
-            //Debug.DrawRay(transform.position, transform.forward * maxRayDistance, Color.green);
-            Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, maxRayDistance);
+            Physics.Raycast(transform.position, transform.forward, out var hit, maxRayDistance);
             return hit;
         }
     }

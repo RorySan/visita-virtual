@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 120
-  isTimerRunning: 0
+  isTimerRunning: 1
   startingPosition: {fileID: 868217630}
   userInterface: {fileID: 1037188668}
   informationPanels:

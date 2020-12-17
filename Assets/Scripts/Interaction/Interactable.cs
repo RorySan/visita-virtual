@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-
 namespace VisitaVirtual.Interaction
 {
     public class Interactable : MonoBehaviour, IInteractable
@@ -15,7 +14,7 @@ namespace VisitaVirtual.Interaction
         // Cached References
             // Outlines objects to indicate they are interactable
         [SerializeField] private Outline targetOutline;
-            // Marks the location where the interaction takes place
+            // Marks the location for this interaction
         [SerializeField] private LocationMarker locationMarker;
 
         // Events
@@ -35,7 +34,7 @@ namespace VisitaVirtual.Interaction
             DisableHighlight(); 
         }
 
-        public virtual void Interact()
+        public void Interact()
         {
             onInteraction.Invoke(this);
         }
@@ -50,14 +49,9 @@ namespace VisitaVirtual.Interaction
             targetOutline.enabled = false;
         }
 
-        public bool IsInRange()
+        public bool IsAvailable()
         {
            return requiresPlayerInRange == locationMarker.HasPlayer;
-        }
-
-        public string GetLocationName()
-        {
-            return locationMarker.GetLocationName();
         }
     }
 }

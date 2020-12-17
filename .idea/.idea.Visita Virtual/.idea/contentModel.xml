@@ -4,7 +4,6 @@
     <e p="C:\Users\Usuario\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Usuario\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Visita Virtual.-108022940.00" t="ExcludeRecursive" />
     <e p="C:\Users\Usuario\Documents\Unity\Visita Virtual" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="FromStore" t="Include">
@@ -30,16 +29,6 @@
               <e p="Outline.cs" t="Include" />
             </e>
           </e>
-          <e p="RobotSphere" t="Include">
-            <e p="Assets" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="Editor" t="Include">
-                  <e p="RobotFreeAnimEditor.cs" t="Include" />
-                </e>
-                <e p="RobotFreeAnim.cs" t="Include" />
-              </e>
-            </e>
-          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Control" t="Include">
@@ -53,7 +42,6 @@
           <e p="Interaction" t="Include">
             <e p="IInteractable.cs" t="Include" />
             <e p="Interactable.cs" t="Include" />
-            <e p="Location.cs" t="Include" />
             <e p="locationMarker.cs" t="Include" />
             <e p="TVSwitch.cs" t="Include" />
             <e p="VRButton.cs" t="Include" />

@@ -17,11 +17,6 @@ namespace VisitaVirtual.Interaction
             buttonImage.color = Color.green;
         }
 
-        public override void Interact()
-        {
-            onInteraction.Invoke(this);
-        }
-
         public override void DisableHighlight()
         {
             buttonImage.color = Color.cyan;

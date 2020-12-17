@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace VisitaVirtual.Movement
 {
     public class Mover : MonoBehaviour
     {
         [SerializeField] private float cameraHeight;
-       
+
         public void MoveToPosition(Transform target)
         {
             var targetPosition = target.transform.position;

@@ -53,7 +53,6 @@ namespace VisitaVirtual.Core
         
         private void InteractionExecuted(Interactable interactable)
         {
-            userInterface.UpdateLocation(interactable.GetLocationName());
             CountNewInteraction(interactable);
             UpdateInformationPanels();
         }

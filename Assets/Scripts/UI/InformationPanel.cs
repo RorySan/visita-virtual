@@ -7,6 +7,10 @@ namespace VisitaVirtual.UI
 {
     public class InformationPanel : MonoBehaviour
     {
+        // Configuration Options
+        [SerializeField] private string doneText = "Done";
+        
+        // Cached References
         [SerializeField] private TextMeshProUGUI countdownText;
         [SerializeField] private TextMeshProUGUI interactionsRemainingText;
 
@@ -17,10 +21,7 @@ namespace VisitaVirtual.UI
 
         public void UpdateInteractionsRemainingText(int interactionsRemaining)
         {
-            string text;
-            if (interactionsRemaining == 0) text = "Done";
-            else text = interactionsRemaining.ToString();
-            
+            var text = interactionsRemaining == 0 ? doneText : interactionsRemaining.ToString();
             interactionsRemainingText.text = text;
         }
     }
