@@ -18,8 +18,6 @@ namespace VisitaVirtual.Core
         [SerializeField] private Interactable startingPosition;
 
         // Cached References
-            // Controls the permanent UI 
-        [SerializeField] private UserInterface userInterface;
             // Controls information panels at the scene
         [SerializeField] private List<InformationPanel> informationPanels;
             // Controls scene management

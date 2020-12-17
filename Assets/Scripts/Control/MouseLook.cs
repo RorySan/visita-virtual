@@ -1,18 +1,38 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.XR.Management;
 
 namespace VisitaVirtual.Control
 {
     public class MouseLook : MonoBehaviour
     {
-        private Vector2 rotation = new Vector2(0, 0);
-        [SerializeField] private float speed = 3;
+        // Configuration Options
+        [SerializeField] private float mouseSensitivity = 200;
+        [SerializeField] private bool InvertMouse = true;
+
+        // Cached References
+        [SerializeField] private Transform playerBody;
+
+        private float xRotation;
+
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
         private void Update()
         {
-            if (!Input.GetMouseButton(0)) return;
-            rotation.y += Input.GetAxis("Mouse X");
-            rotation.x += Input.GetAxis("Mouse Y");
-            transform.eulerAngles = (Vector2) rotation * speed;
+            if (!Input.GetKey(KeyCode.Mouse0)) return;
+            
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+            if (InvertMouse) xRotation += mouseY;
+            else xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90, 90);
+
+            transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            playerBody.Rotate(Vector3.up * mouseX);
         }
     }
 }
