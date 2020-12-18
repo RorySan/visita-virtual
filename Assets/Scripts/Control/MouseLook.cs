@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.XR.Management;
+﻿using UnityEngine;
 
 namespace VisitaVirtual.Control
 {
@@ -8,7 +6,7 @@ namespace VisitaVirtual.Control
     {
         // Configuration Options
         [SerializeField] private float mouseSensitivity = 200;
-        [SerializeField] private bool InvertMouse = true;
+        [SerializeField] private bool invertMouse = true;
 
         // Cached References
         [SerializeField] private Transform playerBody;
@@ -27,7 +25,7 @@ namespace VisitaVirtual.Control
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-            if (InvertMouse) xRotation += mouseY;
+            if (invertMouse) xRotation += mouseY;
             else xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90, 90);
 

@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace VisitaVirtual.Interaction
 {
-    public class VRButton : Interactable
+    public class VRButton : MonoBehaviour, IInteractable
     {
+        // Config Options
+        public UnityEvent onInteraction;
+        
+        // Cached References
         private Image buttonImage;
 
         private void Awake()
@@ -12,14 +17,12 @@ namespace VisitaVirtual.Interaction
             buttonImage = GetComponent<Image>();
         }
 
-        public override void EnableHighlight()
-        {
-            buttonImage.color = Color.green;
-        }
+        public void Interact() => onInteraction.Invoke();
 
-        public override void DisableHighlight()
-        {
-            buttonImage.color = Color.cyan;
-        }
+        public void EnableHighlight() => buttonImage.color = Color.cyan;
+
+        public void DisableHighlight() => buttonImage.color = Color.white;
+
+        public bool IsAvailable() => true;
     }
 }

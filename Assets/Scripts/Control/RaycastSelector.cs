@@ -17,7 +17,7 @@ namespace VisitaVirtual.Control
         private GameObject currentTarget;
         private IInteractable interactableObject;
         private bool isInteracting;
-        private Coroutine InteractionCoroutine;
+        private Coroutine interactionCoroutine;
         
         private void FixedUpdate()
         {
@@ -49,7 +49,7 @@ namespace VisitaVirtual.Control
             interactableObject = currentTarget.GetComponent<IInteractable>();
             if (interactableObject == null || !interactableObject.IsAvailable()) return;
             
-            InteractionCoroutine = StartCoroutine(InitiateInteraction());
+            interactionCoroutine = StartCoroutine(InitiateInteraction());
         }
         
         private IEnumerator InitiateInteraction()
@@ -64,7 +64,7 @@ namespace VisitaVirtual.Control
         private void CancelInteraction()
         {
             if (!isInteracting) return;
-            StopCoroutine(InteractionCoroutine);
+            StopCoroutine(interactionCoroutine);
             interactableObject.DisableHighlight();
             isInteracting = false;
         }

@@ -39,18 +39,19 @@ namespace VisitaVirtual.Interaction
             onInteraction.Invoke(this);
         }
         
-        public virtual void EnableHighlight()
+        public void EnableHighlight()
         {
             targetOutline.enabled = true;
         }
 
-        public virtual void DisableHighlight()
+        public void DisableHighlight()
         {
             targetOutline.enabled = false;
         }
 
         public bool IsAvailable()
         {
+            if (!locationMarker) return true;
            return requiresPlayerInRange == locationMarker.HasPlayer;
         }
     }
