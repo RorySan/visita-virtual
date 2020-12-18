@@ -3,7 +3,7 @@ namespace VisitaVirtual.Interaction
 {
     public interface IInteractable
     {
-        bool IsAvailable();
+        bool PlayerAtCorrectLocation();
         void Interact();
         void EnableHighlight();
         void DisableHighlight();

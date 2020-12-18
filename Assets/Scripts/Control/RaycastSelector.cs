@@ -47,7 +47,7 @@ namespace VisitaVirtual.Control
             CancelInteraction();
             currentTarget = newTarget;
             interactableObject = currentTarget.GetComponent<IInteractable>();
-            if (interactableObject == null || !interactableObject.IsAvailable()) return;
+            if (interactableObject == null || !interactableObject.PlayerAtCorrectLocation()) return;
             
             interactionCoroutine = StartCoroutine(InitiateInteraction());
         }

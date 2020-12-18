@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace VisitaVirtual.Interaction
 {
@@ -9,11 +10,11 @@ namespace VisitaVirtual.Interaction
     {
         // Config Options
             // Determines if the interaction can be activated from outside the location marker
-        [SerializeField] private bool requiresPlayerInRange;
+        [SerializeField] private bool requiresPlayerAtLocationMarker;
       
         // Cached References
             // Outlines objects to indicate they are interactable
-        [SerializeField] private Outline targetOutline;
+        [SerializeField] private Outline interactionOutline;
             // Marks the location for this interaction
         [SerializeField] private LocationMarker locationMarker;
 
@@ -21,7 +22,7 @@ namespace VisitaVirtual.Interaction
         public OnInteraction onInteraction;
         
         // Support Variables
-        private bool hasPlayer;
+        private bool isPlayerAtLocationMarker;
         
         
         [System.Serializable]
@@ -41,18 +42,17 @@ namespace VisitaVirtual.Interaction
         
         public void EnableHighlight()
         {
-            targetOutline.enabled = true;
+            interactionOutline.enabled = true;
         }
 
         public void DisableHighlight()
         {
-            targetOutline.enabled = false;
+            interactionOutline.enabled = false;
         }
 
-        public bool IsAvailable()
-        {
-            if (!locationMarker) return true;
-           return requiresPlayerInRange == locationMarker.HasPlayer;
+        public bool PlayerAtCorrectLocation()
+        { 
+            return requiresPlayerAtLocationMarker == locationMarker.HasPlayer;
         }
     }
 }

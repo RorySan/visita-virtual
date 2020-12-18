@@ -23,6 +23,6 @@ namespace VisitaVirtual.Interaction
 
         public void DisableHighlight() => buttonImage.color = Color.white;
 
-        public bool IsAvailable() => true;
+        public bool PlayerAtCorrectLocation() => true;
     }
 }
