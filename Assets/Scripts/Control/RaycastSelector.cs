@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using VisitaVirtual.Interaction;
 
@@ -6,69 +8,78 @@ namespace VisitaVirtual.Control
 {
     public class RaycastSelector : MonoBehaviour
     {
-        // TODO Cachear todos los interactuables de la escena en una lista al empezar
-        //private List<IInteractable> interactables;
-       
         // Config Options
         [SerializeField] private float interactionTime = 1.5f;
         [SerializeField] private float maxRayDistance = 150;
 
+        // Cached References
+        private List<Interactable> interactables;
+        
         // Support Variables
         private GameObject currentTarget;
-        private IInteractable interactableObject;
+        private Interactable currentInteraction;
         private bool isInteracting;
         private Coroutine interactionCoroutine;
-        
-        
-        
+
+        private void Start()
+        {
+            CacheReferences();
+        }
+
         private void FixedUpdate()
         {
             var raycastHit = FireRay();
-            if (!FindsTarget(raycastHit)) return;
-            if (TargetNotChanged(raycastHit, out var newTarget)) return;
-
-            InteractWithNewTarget(newTarget);
+            if (FindsNoTarget(raycastHit)) return;
+            if (TargetIsNotNew(raycastHit, out var newTarget)) return;
+            ManageNewTarget(newTarget);
         }
 
-        private bool FindsTarget(RaycastHit hit)
+        private bool FindsNoTarget(RaycastHit hit)
         {
-            if (hit.transform) return true;
-            CancelInteraction();
+            if (hit.transform) return false;
+            CancelCurrentInteraction();
             currentTarget = null;
-            return false;
+            return true;
         }
 
-        private bool TargetNotChanged(RaycastHit hit, out GameObject newTarget)
+        private bool TargetIsNotNew(RaycastHit hit, out GameObject newTarget)
         {
             newTarget = hit.transform.gameObject;
             return newTarget == currentTarget;
         }
 
-        private void InteractWithNewTarget(GameObject newTarget)
+        private void ManageNewTarget(GameObject newTarget)
         {
-            CancelInteraction();
+            CancelCurrentInteraction();
             currentTarget = newTarget;
-            Debug.Log("targeting " + newTarget.name);
-            interactableObject = currentTarget.GetComponent<IInteractable>();
-            if (interactableObject == null || !interactableObject.PlayerAtCorrectLocation()) return;
-            
-            interactionCoroutine = StartCoroutine(InitiateInteraction());
+            if (TargetInteractable()) 
+                ExecuteInteraction();
         }
-        
-        private IEnumerator InitiateInteraction()
+        private bool TargetInteractable()
         {
-            interactableObject.EnableHighlight();
+            currentInteraction = interactables.FirstOrDefault(interactable =>
+                interactable.gameObject == currentTarget);
+            return currentInteraction && currentInteraction.PlayerAtCorrectLocation();
+        }
+        private void ExecuteInteraction()
+        {
+            interactionCoroutine = StartCoroutine(Interact());
+        }
+
+        private IEnumerator Interact()
+        {
+            currentInteraction.EnableHighlight();
             isInteracting = true;
             yield return new WaitForSeconds(interactionTime);
-            interactableObject.Interact();
-            CancelInteraction();
+            currentInteraction.Interact();
+            CancelCurrentInteraction();
         }
         
-        private void CancelInteraction()
+        private void CancelCurrentInteraction()
         {
             if (!isInteracting) return;
             StopCoroutine(interactionCoroutine);
-            interactableObject.DisableHighlight();
+            currentInteraction.DisableHighlight();
             isInteracting = false;
         }
 
@@ -76,6 +87,11 @@ namespace VisitaVirtual.Control
         {
             Physics.Raycast(transform.position, transform.forward, out var hit, maxRayDistance);
             return hit;
+        }
+        
+        private void CacheReferences()
+        {
+            interactables = FindObjectsOfType<Interactable>().ToList();
         }
     }
 }
