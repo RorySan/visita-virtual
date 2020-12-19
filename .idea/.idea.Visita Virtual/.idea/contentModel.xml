@@ -36,7 +36,7 @@
           </e>
           <e p="Control" t="Include">
             <e p="MouseLook.cs" t="Include" />
-            <e p="PlayerKeyboardMover.cs" t="Include" />
+            <e p="PlayerKeyboardController.cs" t="Include" />
             <e p="RaycastSelector.cs" t="Include" />
           </e>
           <e p="Core" t="Include">

@@ -19,6 +19,8 @@ namespace VisitaVirtual.Control
         private bool isInteracting;
         private Coroutine interactionCoroutine;
         
+        
+        
         private void FixedUpdate()
         {
             var raycastHit = FireRay();
