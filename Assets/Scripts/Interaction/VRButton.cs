@@ -4,11 +4,8 @@ using UnityEngine.UI;
 
 namespace VisitaVirtual.Interaction
 {
-    public class VRButton : MonoBehaviour, IInteractable
+    public class VRButton : Interactable
     {
-        // Config Options
-        public UnityEvent onInteraction;
-        
         // Cached References
         private Image buttonImage;
 
@@ -17,12 +14,10 @@ namespace VisitaVirtual.Interaction
             buttonImage = GetComponent<Image>();
         }
 
-        public void Interact() => onInteraction.Invoke();
+        public override void EnableHighlight() => buttonImage.color = Color.cyan;
 
-        public void EnableHighlight() => buttonImage.color = Color.cyan;
+        public override void DisableHighlight() => buttonImage.color = Color.white;
 
-        public void DisableHighlight() => buttonImage.color = Color.white;
-
-        public bool PlayerAtCorrectLocation() => true;
+        public override bool PlayerAtCorrectLocation() => true;
     }
 }

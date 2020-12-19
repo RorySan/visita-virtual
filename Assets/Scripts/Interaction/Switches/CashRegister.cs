@@ -7,6 +7,7 @@ namespace VisitaVirtual.Interaction.Switch
         // Cached References
         private AudioSource audioSource;
         [SerializeField] private Animator animator;
+        private static readonly int ServeBeer = Animator.StringToHash("ServeBeer");
 
         private void Awake()
         {
@@ -16,7 +17,7 @@ namespace VisitaVirtual.Interaction.Switch
         protected override void Execute()
         {
             audioSource.Play();
-            animator.SetTrigger("ServeBeer");
+            animator.SetTrigger(ServeBeer);
         }
     }
 }

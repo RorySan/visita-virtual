@@ -23,7 +23,7 @@ namespace VisitaVirtual.Control
 
         private void Start()
         {
-            CacheReferences();
+            interactables = FindObjectsOfType<Interactable>().ToList();
         }
 
         private void FixedUpdate()
@@ -89,9 +89,6 @@ namespace VisitaVirtual.Control
             return hit;
         }
         
-        private void CacheReferences()
-        {
-            interactables = FindObjectsOfType<Interactable>().ToList();
-        }
+        
     }
 }

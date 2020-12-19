@@ -15,7 +15,7 @@ namespace VisitaVirtual.Core
             // ON/OFF switch for the timer in the inspector
         [SerializeField] private bool isTimerRunning = true;
             // Determines the location at which the player starts
-        [SerializeField] private Interactable startingPosition;
+        [SerializeField] private Location startingPosition;
 
         // Cached References
             // Controls information panels at the scene

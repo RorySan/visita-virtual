@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace VisitaVirtual.Interaction
 {
-    public class Interactable : MonoBehaviour, IInteractable
+    public class Interactable : MonoBehaviour
     {
         // Config Options
             // Determines if the interaction can be activated from outside the location marker
@@ -34,17 +34,17 @@ namespace VisitaVirtual.Interaction
             onInteraction.Invoke(this);
         }
         
-        public void EnableHighlight()
+        public virtual void EnableHighlight()
         {
             interactionOutline.enabled = true;
         }
 
-        public void DisableHighlight()
+        public virtual void DisableHighlight()
         {
             interactionOutline.enabled = false;
         }
 
-        public bool PlayerAtCorrectLocation()
+        public virtual bool PlayerAtCorrectLocation()
         {
             bool isPlayerAtLocationMarker = locationMarkers.FirstOrDefault(marker => 
                 marker.HasPlayer);
