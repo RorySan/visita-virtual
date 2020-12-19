@@ -244,7 +244,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1268874666, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1268874666, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
       propertyPath: playerBody
@@ -288,7 +288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4306399129468677263, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306399130214485702, guid: 6349fab02ad3b69429fde7614a036655, type: 3}
       propertyPath: m_IsActive
@@ -454,6 +454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bf80bdbbba8ae4fa1588a353c69a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiresPlayerAtLocationMarker: 0
+  interactionOutline: {fileID: 0}
+  locationMarkers: []
   onInteraction:
     m_PersistentCalls:
       m_Calls:

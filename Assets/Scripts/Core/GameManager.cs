@@ -25,9 +25,9 @@ namespace VisitaVirtual.Core
         
         // Support Variables
             // List of all interactions in the scene
-        private List<Interactable> interactions = new List<Interactable>();
+        private List<Interaction.Interaction> interactions = new List<Interaction.Interaction>();
             // List of interactions discovered by the player
-        private readonly List<Interactable> completedInteractions = new List<Interactable>();
+        private readonly List<Interaction.Interaction> completedInteractions = new List<Interaction.Interaction>();
       
         private void Start()
         {
@@ -45,20 +45,20 @@ namespace VisitaVirtual.Core
         private void CacheReferences()
         {
             //Find and listen to all interactions available
-            interactions = FindObjectsOfType<Interactable>().ToList();
+            interactions = FindObjectsOfType<Interaction.Interaction>().ToList();
             interactions.ForEach(x => x.onInteraction.AddListener(InteractionExecuted));
         }
         
-        private void InteractionExecuted(Interactable interactable)
+        private void InteractionExecuted(Interaction.Interaction interaction)
         {
-            CountNewInteraction(interactable);
+            CountNewInteraction(interaction);
             UpdateInformationPanels();
         }
 
-        private void CountNewInteraction(Interactable interactable)
+        private void CountNewInteraction(Interaction.Interaction interaction)
         {
-            if (completedInteractions.Contains(interactable)) return;
-            completedInteractions.Add(interactable);
+            if (completedInteractions.Contains(interaction)) return;
+            completedInteractions.Add(interaction);
         }
 
         private void UpdateInformationPanels()

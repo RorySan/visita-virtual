@@ -13,17 +13,17 @@ namespace VisitaVirtual.Control
         [SerializeField] private float maxRayDistance = 150;
 
         // Cached References
-        private List<Interactable> interactables;
+        private List<Interaction.Interaction> interactables;
         
         // Support Variables
         private GameObject currentTarget;
-        private Interactable currentInteraction;
+        private Interaction.Interaction currentInteraction;
         private bool isInteracting;
         private Coroutine interactionCoroutine;
 
         private void Start()
         {
-            interactables = FindObjectsOfType<Interactable>().ToList();
+            interactables = FindObjectsOfType<Interaction.Interaction>().ToList();
         }
 
         private void FixedUpdate()

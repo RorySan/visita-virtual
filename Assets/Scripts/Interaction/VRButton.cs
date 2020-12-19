@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace VisitaVirtual.Interaction
 {
-    public class VRButton : Interactable
+    public class VRButton : Interaction
     {
         // Cached References
         private Image buttonImage;

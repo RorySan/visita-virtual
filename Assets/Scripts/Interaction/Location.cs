@@ -3,7 +3,7 @@ using VisitaVirtual.Movement;
 
 namespace VisitaVirtual.Interaction
 {
-    public class Location : Interactable
+    public class Location : Interaction
     {
         private Mover playerMover;
 
