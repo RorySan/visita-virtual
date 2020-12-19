@@ -46,6 +46,7 @@ namespace VisitaVirtual.Control
         {
             CancelInteraction();
             currentTarget = newTarget;
+            Debug.Log("targeting " + newTarget.name);
             interactableObject = currentTarget.GetComponent<IInteractable>();
             if (interactableObject == null || !interactableObject.PlayerAtCorrectLocation()) return;
             

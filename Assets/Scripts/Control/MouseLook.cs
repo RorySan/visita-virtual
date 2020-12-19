@@ -5,7 +5,7 @@ namespace VisitaVirtual.Control
     public class MouseLook : MonoBehaviour
     {
         // Configuration Options
-        [SerializeField] private float mouseSensitivity = 200;
+        [SerializeField] private float mouseSensitivity = 3;
         [SerializeField] private bool invertMouse = true;
 
         // Cached References
@@ -22,8 +22,8 @@ namespace VisitaVirtual.Control
         {
             if (!Input.GetKey(KeyCode.Mouse0)) return;
             
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
             if (invertMouse) xRotation += mouseY;
             else xRotation -= mouseY;

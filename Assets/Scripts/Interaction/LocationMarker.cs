@@ -6,7 +6,7 @@ namespace VisitaVirtual.Interaction
     public class LocationMarker : MonoBehaviour
     {
         // Flags if a the player is at the LocationMarker
-        public bool HasPlayer { get; private set; }
+        public bool HasPlayer { get; set; }
 
         private void OnTriggerEnter(Collider other)
         {

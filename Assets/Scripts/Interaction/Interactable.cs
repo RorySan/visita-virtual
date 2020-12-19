@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace VisitaVirtual.Interaction
 {
@@ -13,29 +12,24 @@ namespace VisitaVirtual.Interaction
         [SerializeField] private bool requiresPlayerAtLocationMarker;
       
         // Cached References
-            // Outlines objects to indicate they are interactable
+            // Outlines interactable objects
         [SerializeField] private Outline interactionOutline;
-            // Marks the location for this interaction
-        [SerializeField] private LocationMarker locationMarker;
+            // Locations available for this interaction
+        [SerializeField] protected List<LocationMarker> locationMarkers;
 
         // Events
         public OnInteraction onInteraction;
-        
-        // Support Variables
-        private bool isPlayerAtLocationMarker;
-        
-        
         [System.Serializable]
         public class OnInteraction : UnityEvent<Interactable>
         {
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             DisableHighlight(); 
         }
 
-        public void Interact()
+        public virtual void Interact()
         {
             onInteraction.Invoke(this);
         }
@@ -51,8 +45,10 @@ namespace VisitaVirtual.Interaction
         }
 
         public bool PlayerAtCorrectLocation()
-        { 
-            return requiresPlayerAtLocationMarker == locationMarker.HasPlayer;
+        {
+            bool isPlayerAtLocationMarker = locationMarkers.FirstOrDefault(marker => 
+                marker.HasPlayer);
+            return requiresPlayerAtLocationMarker == isPlayerAtLocationMarker;
         }
     }
 }
