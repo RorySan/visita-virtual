@@ -13,49 +13,56 @@ namespace VisitaVirtual.Control
         [SerializeField] private float maxRayDistance = 150;
 
         // Cached References
-        private List<Interaction.Interaction> interactables;
+        [SerializeField] private List<Interactable> interactables;
         
-        // Support Variables
+        // Support Fields
         private GameObject currentTarget;
-        private Interaction.Interaction currentInteraction;
-        private bool isInteracting;
+        private Interactable currentInteraction;
         private Coroutine interactionCoroutine;
+        private bool isInteracting;
 
         private void Start()
         {
-            interactables = FindObjectsOfType<Interaction.Interaction>().ToList();
+            interactables = FindObjectsOfType<Interactable>().ToList();
         }
 
         private void FixedUpdate()
         {
-            var raycastHit = FireRay();
-            if (FindsNoTarget(raycastHit)) return;
-            if (TargetIsNotNew(raycastHit, out var newTarget)) return;
-            ManageNewTarget(newTarget);
+            if (RaycastFindsTarget(out var target) && 
+                TargetIsNew(target))
+                ManageNewTarget(target);
         }
 
-        private bool FindsNoTarget(RaycastHit hit)
+        private bool RaycastFindsTarget(out GameObject target)
         {
-            if (hit.transform) return false;
+            if (RaycastHits(out var hit))
+            {
+                target = hit.transform.gameObject;
+                return true;
+            }
             CancelCurrentInteraction();
-            currentTarget = null;
-            return true;
+            target = currentTarget = null;
+            return false;
         }
-
-        private bool TargetIsNotNew(RaycastHit hit, out GameObject newTarget)
+        
+        private bool RaycastHits(out RaycastHit hit)
         {
-            newTarget = hit.transform.gameObject;
-            return newTarget == currentTarget;
+            return Physics.Raycast(transform.position, transform.forward, out hit, maxRayDistance);
+        }
+        
+        private bool TargetIsNew(GameObject target)
+        {
+            return target != currentTarget;
         }
 
         private void ManageNewTarget(GameObject newTarget)
         {
             CancelCurrentInteraction();
             currentTarget = newTarget;
-            if (TargetInteractable()) 
+            if (TargetIsInteractable()) 
                 ExecuteInteraction();
         }
-        private bool TargetInteractable()
+        private bool TargetIsInteractable()
         {
             currentInteraction = interactables.FirstOrDefault(interactable =>
                 interactable.gameObject == currentTarget);
@@ -82,13 +89,5 @@ namespace VisitaVirtual.Control
             currentInteraction.DisableHighlight();
             isInteracting = false;
         }
-
-        private RaycastHit FireRay()
-        {
-            Physics.Raycast(transform.position, transform.forward, out var hit, maxRayDistance);
-            return hit;
-        }
-        
-        
     }
 }

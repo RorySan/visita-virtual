@@ -6,15 +6,18 @@ namespace VisitaVirtual.Control
     {
         [SerializeField] private float movementSpeed = 15;
         [SerializeField] private float rotationSpeed = 100;
+        [SerializeField] private bool useMouseView;
 
         private void Update()
         {
-            float rotation = Input.GetAxis("Horizontal");
-            float translation = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
             
-            //transform.Rotate(Vector3.up * (rotation * rotationSpeed * Time.deltaTime));
-            transform.Translate(Vector3.forward * (translation * movementSpeed * Time.deltaTime));
-            transform.Translate(Vector3.right*(rotation*movementSpeed*Time.deltaTime));
+            transform.Translate(Vector3.forward * (vertical * movementSpeed * Time.deltaTime));
+            if (useMouseView)  
+                transform.Translate(Vector3.right*(horizontal * movementSpeed*Time.deltaTime));
+            else 
+                transform.Rotate(Vector3.up * (horizontal * rotationSpeed * Time.deltaTime));
         }        
     }
 }

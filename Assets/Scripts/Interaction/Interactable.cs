@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 namespace VisitaVirtual.Interaction
 {
-    public class Interaction : MonoBehaviour
+    public class Interactable : MonoBehaviour
     {
         // Config Options
             // Determines if the interaction can be activated from outside the location marker
         [SerializeField] private bool requiresPlayerAtLocationMarker;
-      
+        
         // Cached References
             // Outlines interactable objects
         [SerializeField] private Outline interactionOutline;
@@ -20,7 +20,7 @@ namespace VisitaVirtual.Interaction
         // Events
         public OnInteraction onInteraction;
         [System.Serializable]
-        public class OnInteraction : UnityEvent<Interaction>
+        public class OnInteraction : UnityEvent<Interactable>
         {
         }
 

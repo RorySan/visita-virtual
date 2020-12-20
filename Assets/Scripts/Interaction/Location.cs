@@ -1,18 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using VisitaVirtual.Movement;
 
 namespace VisitaVirtual.Interaction
 {
-    public class Location : Interaction
+    public class Location : Interactable
     {
-        private Mover playerMover;
+        Mover playerMover;
 
-        protected override void Start()
+        private void Awake()
         {
-            base.Start();
             playerMover = FindObjectOfType<Mover>();
         }
-
+        
         public override void Interact()
         {
             if (locationMarkers == null) return;

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace VisitaVirtual.Interaction
 {
-    public class VRButton : Interaction
+    public class VRButton : Interactable
     {
         // Cached References
         private Image buttonImage;
