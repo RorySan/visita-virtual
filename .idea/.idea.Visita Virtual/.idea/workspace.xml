@@ -16,15 +16,28 @@
     <list default="true" id="02debb24-bdf3-43af-9656-11f83cb4c19e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Visita Virtual/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/PlayerFPS.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/PlayerFPS.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/User Interface.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/User Interface.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerKeyboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerKeyboardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/RaycastSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/RaycastSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/RaycastSelector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/RaycastSelector.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/LocationMarker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/LocationMarker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Teleporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/Mover.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/Teleporter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,36 +49,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/HighlightSelectionResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/ISelectionResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/IRayProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/OutlineSelectionResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/MouseScreenRayProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/MusicPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/SelectionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/ISelector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Switches/OneTimeSwitch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/PersistentObjectSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/InfallibleCode_SOLID_Tutorial_2/Assets/_Project/Scripts/RayCastBasedTagSelector.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/LocationText.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RaycastSelector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Mover.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PointOfInterest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/VRButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Movement/LocationMarker.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/TVSwitch.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/TVSwitch.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/LocationMarker.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/PointOfInterest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/VRButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/IInteractable.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LocationText.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/PointOfInterest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/RaycastSelector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interaction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SceneManagement/SceneLoader.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/IInteractable.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/InformationPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/WhiteBall.cs" />
@@ -83,17 +85,39 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/PlayerMover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/PlayerKeyboardMover1.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/PlayerFPSMover.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/LocationMarker.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Switches/CashRegister.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Movement/Mover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/VRButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/PlayerKeyboardController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/IRayProvider.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/MouseRayProvider.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/IInteractable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/RayCastBasedListSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Movement/Teleporter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Control/SelectionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Location.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Control/MouseLook.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Highlighter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/IHighlighter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/MaterialHighlighter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Control/RaycastSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/OutlineHighlighter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/ColorHighlighter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/MouseclickSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/ClickSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/LookatSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Selector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactables/LocationMarker.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactables/Interactable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactables/Location.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Control/Teleporter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/LookatCursor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/LookatCrosshair.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Control/Selectors/LookatSelector.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lbGyxmFfRxCfx6wRD8JdSOYVb6" />
@@ -152,6 +176,9 @@
       <workItem from="1608369040719" duration="15253000" />
       <workItem from="1608403062242" duration="7000" />
       <workItem from="1608453879691" duration="15732000" />
+      <workItem from="1608539939836" duration="20315000" />
+      <workItem from="1608581562815" duration="4825000" />
+      <workItem from="1608620568470" duration="28379000" />
     </task>
     <servers />
   </component>

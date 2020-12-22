@@ -29,7 +29,7 @@ namespace VisitaVirtual.Core
         private void Start()
         {
             DisableDeviceScreenSleep();
-            ListenToInteractables();
+            AddListenersToInteractables();
             MovePlayerToStartingPosition();
         }
 
@@ -38,7 +38,7 @@ namespace VisitaVirtual.Core
             CountdownGameTimer();
         }
         
-        private void ListenToInteractables()
+        private void AddListenersToInteractables()
         {
             interactablesAvailable = FindObjectsOfType<Interactable>()
                 .Except(interactablesIgnored).ToList();
@@ -48,17 +48,18 @@ namespace VisitaVirtual.Core
         
         private void InteractionExecuted(Interactable interactable)
         {
-            CountNewInteraction(interactable);
-            UpdateInformationPanels();
+            if(NewInteractionIsDiscovered(interactable))
+                UpdateInformationPanelsWithInteractionsRemaining();
         }
 
-        private void CountNewInteraction(Interactable interactable)
+        private bool NewInteractionIsDiscovered(Interactable interactable)
         {
-            if (interactablesUsed.Contains(interactable)) return;
-            interactablesUsed.Add(interactable);
+            if (interactablesUsed.Contains(interactable)) return false;
+            interactablesUsed.Add(interactable); 
+            return true;
         }
 
-        private void UpdateInformationPanels()
+        private void UpdateInformationPanelsWithInteractionsRemaining()
         {
             int interactionsRemaining = interactablesAvailable.Count - interactablesUsed.Count;
         
