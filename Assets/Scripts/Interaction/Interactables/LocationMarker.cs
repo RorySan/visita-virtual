@@ -9,13 +9,11 @@ namespace VisitaVirtual.Interaction
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("player arrives");
             HasPlayer = true;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            Debug.Log("player departs");
             HasPlayer = false;
         }
 

@@ -2,8 +2,6 @@
 
 namespace VisitaVirtual.Core
 {
-    
-
     public class PersistentObjects : MonoBehaviour
     {
         private void Awake()
