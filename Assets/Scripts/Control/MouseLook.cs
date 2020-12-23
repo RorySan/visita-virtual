@@ -20,7 +20,7 @@ namespace VisitaVirtual.Control
 
         private void Update()
         {
-            //if (!Input.GetKey(KeyCode.Mouse0)) return;
+            if (!Input.GetKey(KeyCode.Mouse0)) return;
             
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;

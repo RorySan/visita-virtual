@@ -14,8 +14,8 @@ namespace VisitaVirtual.Control
         private List<Interactable> interactables;
         
         // Support Fields
-        protected GameObject currentTarget;
-        protected Interactable currentInteractable;
+        [SerializeField] private GameObject currentTarget;
+        [SerializeField] protected Interactable currentInteractable;
      
         private void Start()
         {
@@ -56,6 +56,7 @@ namespace VisitaVirtual.Control
 
         private void PrepareToInteractWithTarget(Interactable targetInteractable)
         {
+            if (currentInteractable == targetInteractable) return;
             currentInteractable = targetInteractable;
             currentInteractable.EnableHighlight();
         }
@@ -70,6 +71,7 @@ namespace VisitaVirtual.Control
         
         protected virtual void ExecuteInteraction()
         {
+            
         }
 
         private bool RaycastFindsTarget(out GameObject target)

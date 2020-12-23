@@ -38,7 +38,9 @@ namespace VisitaVirtual.Control
             yield return new WaitForSeconds(interactionTime);
             currentInteractable.Interact();
             crosshair.DeactivateCrosshair();
+            currentInteractable.DisableHighlight();
         }
+        
 
         protected override void CancelCurrentInteraction()
         {

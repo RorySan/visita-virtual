@@ -25,13 +25,14 @@ namespace Interaction
         public void ActivateCrosshair()
         {
             crosshairActive = true;
-            timer = 0;
+            
         }
 
         public void DeactivateCrosshair()
         {
             crosshairActive = false;
             crosshairImage.fillAmount = 0;
+            timer = 0;
         }
     }
 }

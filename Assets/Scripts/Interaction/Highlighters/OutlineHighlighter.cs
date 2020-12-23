@@ -9,12 +9,14 @@ namespace VisitaVirtual.Interaction
         public void Highlight()
         {
             if (myOutline.enabled) return;
+            Debug.Log("highlight enabled");
             myOutline.enabled = true;
         }
 
         public void CancelHighlight()
         {
             if (myOutline.enabled == false) return;
+            Debug.Log("highlight disabled");
             myOutline.enabled = false;
         }
     }

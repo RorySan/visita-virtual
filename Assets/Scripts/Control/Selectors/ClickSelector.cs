@@ -8,7 +8,11 @@ namespace VisitaVirtual.Interaction
         protected override void ExecuteInteraction()
         {
             if (Input.GetMouseButtonUp(0) && currentInteractable)
+            {
                 currentInteractable.Interact();
+                
+                currentInteractable.DisableHighlight();
+            }
         }
     }
 }

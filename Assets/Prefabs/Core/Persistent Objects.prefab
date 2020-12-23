@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4420142349840571184}
+  - component: {fileID: 5755215079567393714}
   m_Layer: 0
   m_Name: Persistent Objects
   m_TagString: Untagged
@@ -31,6 +32,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5755215079567393714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52718204043827721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7afa28929cf7194a8702dd219a074fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1461716070413669522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3020423447306903798, guid: 3b49e581cb1b53343b56dab9856447cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1056c1c307949ea4cb015538f576026c, type: 3}
     - target: {fileID: 3020423447306903799, guid: 3b49e581cb1b53343b56dab9856447cf, type: 3}
       propertyPath: m_RootOrder
       value: 0

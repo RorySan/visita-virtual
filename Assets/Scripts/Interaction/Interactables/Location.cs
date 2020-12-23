@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using VisitaVirtual.Control;
 
 namespace VisitaVirtual.Interaction
@@ -25,8 +24,6 @@ namespace VisitaVirtual.Interaction
         private Transform FindClosestLocationMarker()
         {
             var destination = locationMarkers[0].transform;
-            if (locationMarkers.Count == 1) return destination;
-
             var playerPosition = playerTeleporter.transform.position;
             foreach (var marker in locationMarkers)
             {

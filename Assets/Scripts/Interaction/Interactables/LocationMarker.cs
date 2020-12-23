@@ -1,20 +1,21 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace VisitaVirtual.Interaction
 {
     public class LocationMarker : MonoBehaviour
     {
         // Flags if the player is at the LocationMarker
-        public bool HasPlayer { get; private set; }
+        public bool HasPlayer { get; set; }
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log("player arrives");
             HasPlayer = true;
         }
 
         private void OnTriggerExit(Collider other)
         {
+            Debug.Log("player departs");
             HasPlayer = false;
         }
 

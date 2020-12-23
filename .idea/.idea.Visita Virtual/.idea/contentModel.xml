@@ -31,9 +31,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Audio" t="Include">
-            <e p="MusicPlayer.cs" t="Include" />
-          </e>
           <e p="Control" t="Include">
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerKeyboardController.cs" t="Include" />
@@ -46,7 +43,7 @@
           </e>
           <e p="Core" t="Include">
             <e p="GameManager.cs" t="Include" />
-            <e p="PersistentObjectSpawner.cs" t="Include" />
+            <e p="PersistentObjects.cs" t="Include" />
           </e>
           <e p="Interaction" t="Include">
             <e p="Highlighters" t="Include">

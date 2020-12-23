@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using VisitaVirtual.SceneManagement;
 using VisitaVirtual.UI;
 using VisitaVirtual.Interaction;
@@ -15,6 +16,9 @@ namespace VisitaVirtual.Core
         [SerializeField] private Location playerStartingPosition;
         // List of interactions not to be tracked
         [SerializeField] private List<Interactable> interactablesIgnored = new List<Interactable>();
+        
+        // Events
+        [SerializeField] private UnityEvent onAllInteractionsDiscovered;
         
         // Support Fields
             // List of all interactions in the scene
@@ -49,7 +53,7 @@ namespace VisitaVirtual.Core
         private void InteractionExecuted(Interactable interactable)
         {
             if(NewInteractionIsDiscovered(interactable))
-                UpdateInformationPanelsWithInteractionsRemaining();
+                UpdatePanelsAndUI();
         }
 
         private bool NewInteractionIsDiscovered(Interactable interactable)
@@ -59,12 +63,14 @@ namespace VisitaVirtual.Core
             return true;
         }
 
-        private void UpdateInformationPanelsWithInteractionsRemaining()
+        private void UpdatePanelsAndUI()
         {
             int interactionsRemaining = interactablesAvailable.Count - interactablesUsed.Count;
-        
             informationPanels.ForEach(informationPanel =>
                 informationPanel.UpdateInteractionsRemainingText(interactionsRemaining));
+            
+            if (interactionsRemaining == 0)
+                onAllInteractionsDiscovered.Invoke();
         }
         
         private void CountdownGameTimer()
