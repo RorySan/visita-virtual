@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using VisitaVirtual.Control;
+using VisitaVirtual.Movement;
 
 namespace VisitaVirtual.Interaction
 {

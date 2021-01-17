@@ -15,14 +15,19 @@ namespace VisitaVirtual.UI
         public void UpdateLocation(string text) => locationText.text = text;
 
         public void PrintMessage(string text) => 
-            messageCoroutine=StartCoroutine(DisplayMessageForSeconds(text));
+            messageCoroutine = StartCoroutine(DisplayMessageForSeconds(text));
 
         private IEnumerator DisplayMessageForSeconds(string message)
         {
-            if(messageCoroutine != null) StopCoroutine(messageCoroutine);
+            ResetMessageDisplay();
             messageText.text = message;
             yield return new WaitForSeconds(messageDisplayTime);
             messageText.text = "";
+        }
+
+        private void ResetMessageDisplay()
+        {
+            if (messageCoroutine != null) StopCoroutine(messageCoroutine);
         }
     }
 }

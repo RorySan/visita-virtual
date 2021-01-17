@@ -19,6 +19,7 @@ namespace VisitaVirtual.Core
         
         // Events
         [SerializeField] private UnityEvent onAllInteractionsDiscovered;
+        [SerializeField] private UnityEvent onTimerFinished;
         
         // Support Fields
             // List of all interactions in the scene
@@ -28,8 +29,7 @@ namespace VisitaVirtual.Core
             
         // Cached References
         [SerializeField] private List<InformationPanel> informationPanels;
-        [SerializeField] private SceneLoader sceneLoader;
-      
+
         private void Start()
         {
             DisableDeviceScreenSleep();
@@ -100,7 +100,7 @@ namespace VisitaVirtual.Core
         {
             UpdateTimerPanel(0, 0);
             isGameTimerRunning = false;
-            sceneLoader.LoadStartScene();
+            onTimerFinished.Invoke();
         }
         
         private void MovePlayerToStartingPosition()

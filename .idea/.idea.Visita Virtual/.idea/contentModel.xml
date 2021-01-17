@@ -34,13 +34,6 @@
           <e p="Control" t="Include">
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerKeyboardController.cs" t="Include" />
-            <e p="Selectors" t="Include">
-              <e p="ClickSelector.cs" t="Include" />
-              <e p="LookatCrosshair.cs" t="Include" />
-              <e p="LookatSelector.cs" t="Include" />
-              <e p="Selector.cs" t="Include" />
-            </e>
-            <e p="Teleporter.cs" t="Include" />
           </e>
           <e p="Core" t="Include">
             <e p="GameManager.cs" t="Include" />
@@ -58,11 +51,20 @@
               <e p="Location.cs" t="Include" />
               <e p="locationMarker.cs" t="Include" />
             </e>
+            <e p="Selectors" t="Include">
+              <e p="ClickSelector.cs" t="Include" />
+              <e p="LookatCrosshair.cs" t="Include" />
+              <e p="LookatSelector.cs" t="Include" />
+              <e p="Selector.cs" t="Include" />
+            </e>
             <e p="Switches" t="Include">
               <e p="CashRegister.cs" t="Include" />
               <e p="OneTimeSwitch.cs" t="Include" />
               <e p="TVSwitch.cs" t="Include" />
             </e>
+          </e>
+          <e p="Movement" t="Include">
+            <e p="Teleporter.cs" t="Include" />
           </e>
           <e p="SceneManagement" t="Include">
             <e p="SceneLoader.cs" t="Include" />

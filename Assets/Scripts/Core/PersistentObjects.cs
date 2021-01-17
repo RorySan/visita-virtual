@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace VisitaVirtual.Core
 {
@@ -9,5 +12,4 @@ namespace VisitaVirtual.Core
             DontDestroyOnLoad(this);
         }
     }
-
 }
